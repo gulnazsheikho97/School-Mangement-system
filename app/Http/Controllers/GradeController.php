@@ -1,9 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\StoreGrades;
+use App\Models\Grade;
+use Dotenv\Result\Success;
 use Illuminate\Http\Request;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 08be6a5d6fc6d74d055b37761577a065cc1b988f
 class GradeController extends Controller
 {
 
@@ -14,8 +20,14 @@ class GradeController extends Controller
    */
   public function index()
   {
+<<<<<<< HEAD
 
   }
+=======
+   $grades=Grade::all();
+   return view('pages.Grades.Grades',['grades'=>$grades]);
+ }
+>>>>>>> 08be6a5d6fc6d74d055b37761577a065cc1b988f
 
   /**
    * Show the form for creating a new resource.
@@ -32,7 +44,7 @@ class GradeController extends Controller
    *
    * @return Response
    */
-  public function store(Request $request)
+  public function store()
   {
 
   }
