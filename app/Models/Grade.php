@@ -1,13 +1,11 @@
 <?php
 
-namespace Grade;
-
+namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
-class Grade extends Model 
+class Grade extends Model
 {
 
-    protected $table = 'Grades';
-    public $timestamps = true;
 
 }
