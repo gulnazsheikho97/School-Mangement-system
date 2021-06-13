@@ -90,7 +90,7 @@
            </div>
            <div class="modal-body">
                <!-- add_form -->
-               <form action="#"method="POST">
+               <form action="{{route('grade.store')}}" method="POST">
                    @csrf
                    <div class="row">
                        <div class="col">
