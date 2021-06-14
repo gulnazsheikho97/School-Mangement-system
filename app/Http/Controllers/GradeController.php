@@ -18,7 +18,7 @@ class GradeController extends Controller
   {
    $grades=Grade::all();
    return view('pages.Grades.Grades',['grades'=>$grades]);
- }
+  }
 
   /**
    * Show the form for creating a new resource.
@@ -35,8 +35,30 @@ class GradeController extends Controller
    *
    * @return Response
    */
-  public function store()
+  public function store(StoreGrades $request)
   {
+       try{
+
+
+    $validated = $request->validated();
+    $grade=new Grade();
+   /* $translations = [
+        'en' => $request->Name_en,
+     ];
+     $grade->setTranslations('name', $translations);*/
+
+
+    $grade->name = ['en' => $request->Name_en, 'ar' => $request->Name];
+    $grade->notes=$request->Notes;
+    $grade->save();
+
+    toastr()->success(trans('message.success'));
+
+    return redirect()->route('grade.index');
+    }
+    catch (\Exception $e){
+        return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+    }
 
   }
 
